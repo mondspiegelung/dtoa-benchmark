@@ -35,19 +35,18 @@ Each digit group is run for 100 times. The minimum time duration is measured for
 
 ## Results
 
-The following are `sequential` results measured on a PC (Core i7 920 @2.67Ghz), where `u32toa()` is compiled by Visual C++ 2013 and run on Windows 64-bit. The speedup is based on `sprintf()`.
+The following are `sequential` results measured on a MacBook Pro (3.5 GHz Intel Core i7), where `u32toa()` is compiled by clang 10.0.1 (clang-1001.0.46.4) and run on macOS. The speedup is based on `sprintf()`.
 
 Function      | Time (ns)  | Speedup 
 --------------|-----------:|-------:
-ostringstream |  2,778.748 | 0.45x
-ostrstream    | 2,628.365  | 0.48x
-gay           | 1,646.310  | 0.76x
-sprintf       | 1,256.376  | 1.00x
-fpconv        | 273.822    | 4.59x
-grisu2        | 220.251    | 5.70x
-doubleconv    | 201.645    | 6.23x
-milo          | 138.021    | 9.10x
-null          | 2.146      | 585.58x
+ostringstream | 1,353.400  | 0.74x
+ostrstream    | 1,223.353  | 0.82x
+sprintf       | 999.271    | 1.00x
+doubleconv    | 101.112    | 9.88x
+grisu2        | 76.788     | 13.01x
+milo          | 75.600     | 13.22x
+fpconv        | 73.388     | 13.62x
+null          | 1.418      | 704.88x
 
 ![corei7920@2.67_win64_vc2013_randomdigit_time](result/corei7920@2.67_win64_vc2013_randomdigit_time.png)
 

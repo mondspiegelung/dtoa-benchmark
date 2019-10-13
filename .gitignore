@@ -1,6 +1,3 @@
-/bin/*
-/build/gmake
-/build/vs*/
 /intermediate
 result/result.csv
 result/result.html

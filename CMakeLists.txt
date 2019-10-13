@@ -15,18 +15,23 @@ if (NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release CACHE STRING ${doc})
 endif ()
 
-project(DTOA_BENCHMARK CXX)
+project(DTOA_BENCHMARK C CXX)
+
+set(CMAKE_CXX_STANDARD 11)
 
 add_executable(
   dtoa-benchmark
   src/main.cpp
   # Tests:
   src/doubleconvtest.cpp
+  src/fmttest.cpp
+  src/grisu2btest.cpp
   src/milotest.cpp
   src/null.cpp
   src/ostringstream.cpp
   src/sprintf.cpp
-  # double-conversion:
+  # Libraries:
+  src/grisu/grisu2b_59_56.c
   src/double-conversion/bignum-dtoa.cc
   src/double-conversion/bignum.cc
   src/double-conversion/cached-powers.cc

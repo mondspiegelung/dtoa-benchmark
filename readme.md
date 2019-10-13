@@ -48,7 +48,7 @@ milo          | 75.600     | 13.22x
 fpconv        | 73.388     | 13.62x
 null          | 1.418      | 704.88x
 
-![corei7920@2.67_win64_vc2013_randomdigit_time](result/corei7920@2.67_win64_vc2013_randomdigit_time.png)
+![core-i7-7567u@3.50_mac_clang10_randomdigit_time](https://user-images.githubusercontent.com/576385/66723973-d1c97000-edd4-11e9-8c28-a36d44b7f651.png)
 
 ![corei7920@2.67_win64_vc2013_randomdigit_timedigit](result/corei7920@2.67_win64_vc2013_randomdigit_timedigit.png)
 

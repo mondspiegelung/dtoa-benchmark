@@ -24,13 +24,18 @@ add_executable(
   src/main.cpp
   # Tests:
   src/doubleconvtest.cpp
-  src/fmttest.cpp
+  src/fpconvtest.cpp
+  src/gaytest.cpp
   src/grisu2btest.cpp
   src/milotest.cpp
   src/null.cpp
   src/ostringstream.cpp
+  src/ostrstream.cpp
   src/sprintf.cpp
   # Libraries:
+  src/fpconv/fpconv.c
+  src/gay/dtoa.c
+  src/gay/g_fmt.c
   src/grisu/grisu2b_59_56.c
   src/double-conversion/bignum-dtoa.cc
   src/double-conversion/bignum.cc

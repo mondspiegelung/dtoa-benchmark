@@ -26,14 +26,12 @@ Each digit group is run for 100 times. The minimum time duration is measured for
 
 ## Build and Run
 
-1. Obtain [premake4](http://industriousone.com/premake/download).
-2. Copy premake4 executable to `dtoa-benchmark/build` folder (or system path).
-3. Run `premake.bat` or `premake.sh` in `dtoa-benchmark/build`
-4. On Windows, build the solution at `dtoa-benchmark/build/vs2008/` or `/vs2010/`.
-5. On other platforms, run GNU `make config=release32` (or `release64`) at `dtoa-benchmark/build/gmake/`
-6. On success, run the `dtoa` executable is generated at `dtoa-benchmark/`
-7. The results in CSV format will be written to `dtoa-benchmark/result`.
-8. Run GNU `make` in `dtoa-benchmark/result` to generate results in HTML.
+1. Configure: `cmake .`
+2. Build: `make`
+3. Run benchmark: `./dtoa-benchmark`
+4. On success, run the `dtoa` executable is generated at `dtoa-benchmark/`
+5. The results in CSV format will be written to `dtoa-benchmark/result`.
+6. Run GNU `make` in `dtoa-benchmark/result` to generate results in HTML.
 
 ## Results
 
@@ -71,7 +69,6 @@ Function      | Description
 ostringstream | `std::ostringstream` in C++ standard library with `setprecision(17)`.
 ostrstream    | `std::ostrstream` in C++ standard library with `setprecision(17)`.
 sprintf       | `sprintf()` in C standard library with `"%.17g"` format.
-[stb_sprintf](https://github.com/nothings/stb)   | fast sprintf replacement with `"%.17g"` format.
 [gay](http://www.netlib.org/fp/) | David M. Gay's `dtoa()` C implementation.
 [grisu2](http://florian.loitsch.com/publications/bench.tar.gz?attredirects=0)        | Florian Loitsch's Grisu2 C implementation [1].
 [doubleconv](https://code.google.com/p/double-conversion/)    |  C++ implementation extracted from Google's V8 JavaScript Engine with `EcmaScriptConverter().ToShortest()` (based on Grisu3, fall back to slower bignum algorithm when Grisu3 failed to produce shortest implementation).

@@ -1111,7 +1111,7 @@ It grisu_prettify(const char* digits, int size, int exp, It it,
 }
 
 namespace grisu_options {
-enum { fixed = 1, grisu2 = 2 };
+enum { fixed = 1, grisu2 = 2, binary32 = 4 };
 }
 
 // Formats value using the Grisu algorithm:
@@ -1569,7 +1569,7 @@ template <typename Range> class basic_writer {
           decimal_point_(decimal_point) {
       int num_digits = static_cast<int>(digits.size());
       int full_exp = num_digits + exp - 1;
-      int precision = params.num_digits > 0 ? params.num_digits : 11;
+      int precision = params.num_digits > 0 ? params.num_digits : 16;
       params_.fixed |= full_exp >= -4 && full_exp < precision;
       auto it = internal::grisu_prettify<char>(
           digits.data(), num_digits, exp, internal::counting_iterator<char>(),
@@ -2809,12 +2809,16 @@ void internal::basic_writer<Range>::write_fp(T value,
   memory_buffer buffer;
   int exp = 0;
   int precision = specs.precision >= 0 || !specs.type ? specs.precision : 6;
+  unsigned options = 0;
+  if (handler.fixed) options |= internal::grisu_options::fixed;
+  if (sizeof(value) == sizeof(float))
+    options |= internal::grisu_options::binary32;
   bool use_grisu = USE_GRISU &&
                    (specs.type != 'a' && specs.type != 'A' &&
                     specs.type != 'e' && specs.type != 'E') &&
                    internal::grisu_format(
                        static_cast<double>(value), buffer, precision,
-                       handler.fixed ? internal::grisu_options::fixed : 0, exp);
+                       options, exp);
   char* decimal_point_pos = nullptr;
   if (!use_grisu)
     decimal_point_pos = internal::sprintf_format(value, buffer, specs);

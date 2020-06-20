@@ -1,5 +1,7 @@
 # dtoa Benchmark
 
+This is a fork of Milo Yip's dtoa benchmark with CMake support and fixed reporting.
+
 Copyright(c) 2014 Milo Yip (miloyip@gmail.com)
 
 ## Introduction

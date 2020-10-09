@@ -17,13 +17,15 @@ endif ()
 
 project(DTOA_BENCHMARK C CXX)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 
 add_executable(
   dtoa-benchmark
   src/main.cpp
   # Tests:
+  src/ryutest.cpp
   src/doubleconvtest.cpp
+  src/fmttest.cpp
   src/fpconvtest.cpp
   src/gaytest.cpp
   src/grisu2btest.cpp
@@ -45,3 +47,4 @@ add_executable(
   src/double-conversion/fast-dtoa.cc
   src/double-conversion/fixed-dtoa.cc
   src/double-conversion/strtod.cc)
+target_include_directories(dtoa-benchmark PRIVATE src)

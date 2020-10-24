@@ -77,6 +77,7 @@ sprintf       | `sprintf()` in C standard library with `"%.17g"` format.
 [doubleconv](https://code.google.com/p/double-conversion/)    |  C++ implementation extracted from Google's V8 JavaScript Engine with `EcmaScriptConverter().ToShortest()` (based on Grisu3, fall back to slower bignum algorithm when Grisu3 failed to produce shortest implementation).
 [fpconv](https://github.com/night-shift/fpconv)        | [night-shift](https://github.com/night-shift)'s  Grisu2 C implementation.
 milo          | [miloyip](https://github.com/miloyip)'s Grisu2 C++ header-only implementation.
+fmt           | [{fmt}](https://github.com/fmtlib/fmt)'s `fmt::format_to` with format string compilation
 null          | Do nothing.
 
 Notes:

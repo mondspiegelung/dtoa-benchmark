@@ -52,9 +52,9 @@ ryu           |	43.541   |	20.39x
 fmt           |	40.712   |	21.81x
 null          |	1.200    |	739.78x
 
-![unknown_mac64_clang12.0_randomdigit_time](https://user-images.githubusercontent.com/576385/66723973-d1c97000-edd4-11e9-8c28-a36d44b7f651.png)
+![unknown_mac64_clang12.0_randomdigit_time](https://user-images.githubusercontent.com/576385/97088504-13931600-15e6-11eb-9746-1639c0ce7fbe.png)
 
-![unknown_mac64_clang12.0_randomdigit_timedigit](result/corei7920@2.67_win64_vc2013_randomdigit_timedigit.png)
+![unknown_mac64_clang12.0_randomdigit_timedigit](https://user-images.githubusercontent.com/576385/97088514-358c9880-15e6-11eb-8b35-0011de065101.png)
 
 Note that the `null` implementation does nothing. It measures the overheads of looping and function call.
 

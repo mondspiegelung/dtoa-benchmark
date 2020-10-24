@@ -37,22 +37,24 @@ Each digit group is run for 100 times. The minimum time duration is measured for
 
 ## Results
 
-The following are `sequential` results measured on a MacBook Pro (3.5 GHz Intel Core i7), where `u32toa()` is compiled by clang 10.0.1 (clang-1001.0.46.4) and run on macOS. The speedup is based on `sprintf()`.
+The following are results measured on a MacBook Pro (2.8 GHz Quad-Core Intel Core i7), where `dtoa()` is compiled by clang 12.0.0 (clang-1200.0.32.2) and run on macOS. The speedup is based on `sprintf()`.
 
 Function      | Time (ns)  | Speedup 
 --------------|-----------:|-------:
-ostringstream | 1,353.400  | 0.74x
-ostrstream    | 1,223.353  | 0.82x
-sprintf       | 999.271    | 1.00x
-doubleconv    | 101.112    | 9.88x
-grisu2        | 76.788     | 13.01x
-milo          | 75.600     | 13.22x
-fpconv        | 73.388     | 13.62x
-null          | 1.418      | 704.88x
+ostringstream |	1,187.735|	0.75x
+ostrstream    |	1,048.512|	0.85x
+sprint        |	887.735  |	1.00x
+fpconv        |	119.024  |	7.46x
+grisu2        |	101.082  |	8.78x
+doubleconv    |	84.359   |	10.52x
+milo          |	64.100   |	13.85x
+ryu           |	43.541   |	20.39x
+fmt           |	40.712   |	21.81x
+null          |	1.200    |	739.78x
 
-![core-i7-7567u@3.50_mac_clang10_randomdigit_time](https://user-images.githubusercontent.com/576385/66723973-d1c97000-edd4-11e9-8c28-a36d44b7f651.png)
+![unknown_mac64_clang12.0_randomdigit_time](https://user-images.githubusercontent.com/576385/66723973-d1c97000-edd4-11e9-8c28-a36d44b7f651.png)
 
-![corei7920@2.67_win64_vc2013_randomdigit_timedigit](result/corei7920@2.67_win64_vc2013_randomdigit_timedigit.png)
+![unknown_mac64_clang12.0_randomdigit_timedigit](result/corei7920@2.67_win64_vc2013_randomdigit_timedigit.png)
 
 Note that the `null` implementation does nothing. It measures the overheads of looping and function call.
 

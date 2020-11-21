@@ -1,5 +1,13 @@
 cmake_minimum_required(VERSION 3.1.0)
 
+set(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -fomit-frame-pointer -DNDEBUG")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -fomit-frame-pointer -DNDEBUG")
+set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -march=native -g -fomit-frame-pointer -DNDEBUG")
+set(CMAKE_C_FLAGS_MINSIZEREL "-Os -fomit-frame-pointer -DNDEBUG")
+set(CMAKE_C_FLAGS_RELEASE "-O3 -march=native -fomit-frame-pointer -DNDEBUG")
+set(CMAKE_C_FLAGS_RELWITHDEBINFO "-O2 -march=native -fomit-frame-pointer -g -DNDEBUG")
+
+
 # Joins arguments and places the results in ${result_var}.
 function(join result_var)
   set(result )
@@ -24,6 +32,7 @@ add_executable(
   src/main.cpp
   # Tests:
   src/ryutest.cpp
+  src/serial_fp_convert.cpp
   src/doubleconvtest.cpp
   src/fmttest.cpp
   src/fpconvtest.cpp
@@ -36,6 +45,7 @@ add_executable(
   src/sprintf.cpp
   # Libraries:
   src/fpconv/fpconv.c
+  src/serial/util/fp_convert.cc
   src/gay/dtoa.c
   src/gay/g_fmt.c
   src/grisu/grisu2b_59_56.c

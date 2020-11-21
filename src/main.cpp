@@ -73,6 +73,7 @@ static void Verify(void(*f)(double, char*), const char* fname) {
 	printf("Verifying %-20s ... ", fname);
 
 	// Boundary and simple cases
+	VerifyValue(-0.0, f);
 	VerifyValue(0, f);
 	VerifyValue(0.1, f, "0.1");
 	VerifyValue(0.12, f, "0.12");

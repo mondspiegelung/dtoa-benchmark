@@ -1,3 +1,6 @@
 [submodule "src/serial"]
 	path = src/serial
 	url = git@github.com:mondspiegelung/serial.git
+[submodule "src/dragonbox"]
+	path = src/dragonbox
+	url = https://github.com/jk-jeon/dragonbox.git

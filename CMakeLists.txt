@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.1.0)
 
-set(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -fomit-frame-pointer -DNDEBUG")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -fomit-frame-pointer -DNDEBUG")
-set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -march=native -g -fomit-frame-pointer -DNDEBUG")
-set(CMAKE_C_FLAGS_MINSIZEREL "-Os -fomit-frame-pointer -DNDEBUG")
-set(CMAKE_C_FLAGS_RELEASE "-O3 -march=native -fomit-frame-pointer -DNDEBUG")
-set(CMAKE_C_FLAGS_RELWITHDEBINFO "-O2 -march=native -fomit-frame-pointer -g -DNDEBUG")
+set(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -fomit-frame-pointer -DNDEBUG -I src/dragonbox/include")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -fomit-frame-pointer -DNDEBUG -I src/dragonbox/include")
+set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -march=native -g -fomit-frame-pointer -DNDEBUG -I src/dragonbox/include")
+set(CMAKE_C_FLAGS_MINSIZEREL "-Os -fomit-frame-pointer -DNDEBUG -I src/dragonbox/include")
+set(CMAKE_C_FLAGS_RELEASE "-O3 -march=native -fomit-frame-pointer -DNDEBUG -I src/dragonbox/include")
+set(CMAKE_C_FLAGS_RELWITHDEBINFO "-O2 -march=native -fomit-frame-pointer -g -DNDEBUG -I src/dragonbox/include")
 
 
 # Joins arguments and places the results in ${result_var}.
@@ -33,6 +33,7 @@ add_executable(
   # Tests:
   src/ryutest.cpp
   src/serial_fp_convert.cpp
+  src/dragonbox.cpp
   src/doubleconvtest.cpp
   src/fmttest.cpp
   src/fpconvtest.cpp
@@ -44,6 +45,7 @@ add_executable(
   src/ostrstream.cpp
   src/sprintf.cpp
   # Libraries:
+  src/dragonbox/source/dragonbox_to_chars.cpp
   src/fpconv/fpconv.c
   src/serial/util/fp_convert.cc
   src/gay/dtoa.c
